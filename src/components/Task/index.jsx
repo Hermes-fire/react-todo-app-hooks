@@ -1,11 +1,36 @@
-import { FormControl } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import "./index.css";
-const Task = () => {
+import React, { useState } from "react";
+import {Stack} from 'react-bootstrap';
+import CustomButton from "../CustomButton";
+
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+const Task = (props) => {
+    const [isShown, setIsShown] = useState(false);
+
+    const handleclick = () => {
+        if(isShown === false){
+            setIsShown(true)
+        }else{
+            setIsShown(false)
+        }
+}
+
     return (
-       <div>
-  
-       </div>
+        <Stack direction="horizontal" gap={2}>
+
+            <div className="m-0 p-2 text-truncate fs-4 text-dark border bg-grey " onClick={handleclick}>
+            {props.content}
+            </div>
+
+            {isShown && (
+                <div>
+                    <CustomButton border = '0' variant="danger" class = 'fs-3 px-3' onClick = {props.onClick} content = {<FontAwesomeIcon icon={faTrash}/>}/>
+                </div>
+                )
+            }
+        </Stack>
         )
 }
 

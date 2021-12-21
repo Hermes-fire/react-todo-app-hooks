@@ -3,10 +3,7 @@ import './index.css'
 
 const Home =()=>{
     return (
-      <div id = "home">
-            <Box/>
-      </div>
-      
+            <Box/> 
     )
 }
 export default Home;

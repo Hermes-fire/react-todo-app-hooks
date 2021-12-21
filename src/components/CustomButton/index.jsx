@@ -1,12 +1,14 @@
 import { Button } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import "./index.css";
-const CustomButton = () => {
+
+
+
+const CustomButton = (props) => {
+
     return (
         <>
-  <Button id = "CustomButton" variant="primary">+</Button>{' '}
-</>
+            <Button style={{backgroundColor: props.color, border:props.border}} variant={props.variant} className={props.class} onClick={props.onClick}>{props.content}</Button>{' '}
+        </>
     )
 }
-
 export default CustomButton;
