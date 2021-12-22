@@ -1,5 +1,4 @@
 import { FormControl } from 'react-bootstrap';
-import React, { useState } from "react";
 import "./index.css";
 
 const CustomInput = (props) => {

@@ -21,6 +21,7 @@ const Box = () => {
   const handleChange = (e) =>{
     setValue(e.target.value)
   }
+  
 
   const handleClick = () => {
     if (!value) return;
@@ -36,7 +37,7 @@ const Box = () => {
     setNum(num + 1);
     }
   }
-  
+
   const handleClickTrash = (index) => {
       setTasks(tasks.filter((unused_item, itemIndex) => index !== itemIndex));
       setNum(num - 1)

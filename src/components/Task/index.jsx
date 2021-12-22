@@ -15,10 +15,18 @@ const Task = (props) => {
         }else{
             setIsShown(false)
         }
-}
+    }
+    const onMouseEnter = () =>{
+        setIsShown(true)
+    }
+    const onMouseLeave = () =>{
+        setIsShown(false)
+    }
+
+    
 
     return (
-        <Stack direction="horizontal" gap={2}>
+        <Stack direction="horizontal" gap={2} onMouseEnter = {onMouseEnter} onMouseLeave = {onMouseLeave}>
 
             <div className="m-0 p-2 text-truncate fs-4 text-dark border bg-grey " onClick={handleclick}>
             {props.content}
@@ -26,7 +34,7 @@ const Task = (props) => {
 
             {isShown && (
                 <div>
-                    <CustomButton border = '0' variant="danger" class = 'fs-3 px-3' onClick = {props.onClick} content = {<FontAwesomeIcon icon={faTrash}/>}/>
+                    <CustomButton border = '0' variant="danger" class = 'fs-3 px-3' onClick = {props.onClick}  content = {<FontAwesomeIcon icon={faTrash}/>}/>
                 </div>
                 )
             }
