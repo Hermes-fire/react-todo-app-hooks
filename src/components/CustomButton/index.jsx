@@ -3,11 +3,11 @@ import "./index.css";
 
 
 
-const CustomButton = (props) => {
+const CustomButton = ({style,children,...rest}) => {
 
     return (
         <>
-            <Button style={{backgroundColor: props.color, border:props.border}} variant={props.variant} className={props.class} onClick={props.onClick}>{props.content}</Button>{' '}
+            <Button style={style} {...rest}>{children}</Button>{' '}
         </>
     )
 }
