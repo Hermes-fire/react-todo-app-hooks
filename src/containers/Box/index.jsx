@@ -18,7 +18,7 @@ const Box = () => {
     setValue(e.target.value);
   };
 
-  const _handleClick = (from,index)=>{
+  const handleClick = (from,index)=>{
     switch(from) {
       case 'input':
         if (!value) return;
@@ -67,7 +67,7 @@ const Box = () => {
         />
         <CustomButton
           className="fs-3 px-3"
-          onClick={() =>_handleClick('input')}
+          onClick={() =>handleClick('input')}
         >
           <FontAwesomeIcon icon={faPlus} className="fs-2" />
         </CustomButton>
@@ -78,12 +78,12 @@ const Box = () => {
           <Task
             key={index}
             content={item}
-            onClick={() => _handleClick('clear-task',index)}
+            onClick={() => handleClick('clear-task',index)}
           />
         ))}
       </Stack>
 
-      <TodoFooter len={tasks.length} onClick={() =>_handleClick('clear-all')} />
+      <TodoFooter len={tasks.length} onClick={() =>handleClick('clear-all')} />
     </Container>
   );
 };
